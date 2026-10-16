@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: #0b0d12;
+      color: #f3f5f9;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: 1000px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: #0b0d12;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: #a4adbd;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a:hover {
+      color: #8b9cff;
+    }
+
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: #b7c0ff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin: 15px 0 20px;
+    }
+
+    h1 span {
+      color: #ffffff;
+    }
+
+    .lead {
+      color: #a4adbd;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .section-head {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin: 10px 0;
+    }
+
+    .section-head p {
+      color: #a4adbd;
+    }
+
+    .grid-3 {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #121620;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .card h3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      color: #a4adbd;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 15px;
+    }
+
+    .chip {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #d7dceb;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tag {
+      color: #b7c0ff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-date {
+      color: #b7c0ff;
+      font-weight: bold;
+      width: 120px;
+      flex-shrink: 0;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 5px;
+    }
+
+    .timeline-item p {
+      color: #a4adbd;
+      margin: 0;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 16px;
+      background-color: #121620;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      max-width: 600px;
+    }
+
+    .contact-row:hover {
+      border-color: #8b9cff;
+    }
+
+    .contact-details .contact-label {
+      font-size: 0.75rem;
+      color: #8b9cff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: bold;
+    }
+
+    .contact-details .contact-value {
+      font-size: 0.95rem;
+      color: #f3f5f9;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: #a4adbd;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="wrap">
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Tech Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap">
+        <div class="eyebrow">Information Technology Student</div>
+
+        <h1>Hi, I'm <span>Raven</span></h1>
+
+        <p class="lead">
+          I'm an IT student interested in software development,
+          databases, and creating practical systems that solve
+          everyday problems. I'm always learning.
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">About Me</div>
+          <h2>Curious by nature</h2>
+          <p>
+            I'm currently developing my skills through coursework
+            and hands-on projects.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Software Development</h3>
+            <p>
+              Practicing programming fundamentals,
+              object-oriented concepts, and application development.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Database Design</h3>
+            <p>
+              Learning to organize data, design relationships,
+              and support reliable information systems.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Continuous Learning</h3>
+            <p>
+              Improving through class projects, experimentation,
+              debugging, and feedback.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Tech Stack / Skills</div>
+          <h2>Tools I work with</h2>
+          <p>
+            These are the technologies and concepts I've practiced
+            in coursework and personal projects.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Programming</h3>
+            <p>
+              Application logic and object-oriented programming.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Java</span>
+              <span class="chip">C#</span>
+              <span class="chip">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Web Development</h3>
+            <p>
+              Building web pages and arranging content clearly.
+            </p>
+
+            <div class="chips">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Databases & Tools</h3>
+            <p>
+              Working with structured data and development tools.
+            </p>
+
+            <div class="chips">
+              <span class="chip">MySQL</span>
+              <span class="chip">VS Code</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Projects</div>
+          <h2>Projects I've worked on</h2>
+          <p>
+            Some of my design and development projects.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="project-top">
+              <span class="tag">Design</span>
+            </div>
+
+            <h3>FitPath Fitness App</h3>
+
+            <p>
+              A fitness app concept with guided workouts,
+              progress tracking, and nutrition habits.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Figma</span>
+              <span class="chip">UI/UX</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Certifications & Achievements</div>
+          <h2>Learning milestones</h2>
+          <p>
+            Certificates, awards, seminars, and workshops.
+          </p>
+        </div>
+
+        <article class="card">
+          <h3>NC II - Computer Systems Servicing</h3>
+          <p>May 25, 2024</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Experience / Leadership</div>
+          <h2>Where I'm growing</h2>
+        </div>
+
+        <div class="card timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Current</div>
+
+            <div>
+              <h3>Information Technology Student</h3>
+              <p>
+                Coursework and hands-on practice in programming,
+                database systems, web development, and system design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Contact</div>
+          <h2>Contact Information</h2>
+          <p>Feel free to contact me using the information below.</p>
+        </div>
+
+        <div class="contact-info-list">
+          <a href="mailto:mtomada825@gmail.com" class="contact-row">
+            <div class="contact-details">
+              <div class="contact-label">Email Me</div>
+              <div class="contact-value">
+                mtomada825@gmail.com
+              </div>
+            </div>
+          </a>
+
+          <div class="contact-row">
+            <div class="contact-details">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">
+                Philippines, Oriental Mindoro
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-details">
+              <div class="contact-label">Phone / Signal</div>
+              <div class="contact-value">
+                09664089738
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
